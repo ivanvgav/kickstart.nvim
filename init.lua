@@ -491,6 +491,8 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
+  angularls = {},
+  cssls = {},
   tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
 
