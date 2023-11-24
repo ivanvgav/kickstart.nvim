@@ -108,7 +108,7 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
       "hrsh7th/cmp-buffer", -- source for text in buffer
       'jc-doyle/cmp-pandoc-references',
-      "hrsh7th/cmp-path", -- source for file system
+      "hrsh7th/cmp-path",   -- source for file system
       'hrsh7th/cmp-omni',
     },
   },
@@ -153,18 +153,15 @@ require('lazy').setup({
       end,
     },
   },
-
   {
     -- Theme inspired by Atom
-    "folke/tokyonight.nvim",
-    lazy = false,
+    'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'tokyonight-night'
-			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.cmd.colorscheme 'onedark'
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     end,
   },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -172,7 +169,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'codedark',
+        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -189,7 +186,7 @@ require('lazy').setup({
   -- },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',  opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -220,6 +217,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+  -- { 'nvim-treesitter/nvim-treesitter-angular' },
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -233,7 +231,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -348,7 +346,8 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'markdown_inline' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim',
+      'bash', 'markdown_inline' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -494,7 +493,7 @@ local servers = {
   angularls = {},
   cssls = {},
   tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
 
   lua_ls = {
     Lua = {
@@ -575,7 +574,8 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'buffer' },
-    { name = 'omni',
+    {
+      name = 'omni',
       option = { disable_omnifuncs = { 'v:lua.vim.lsp.omnifunc' }
       }
     },
