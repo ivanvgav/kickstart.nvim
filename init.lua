@@ -248,6 +248,7 @@ vim.wo.relativenumber = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
+vim.o.colorcolumn = "80"
 
 vim.o.wrap = true
 vim.o.linebreak = true
@@ -284,6 +285,9 @@ vim.opt.path:append '**'
 vim.o.termguicolors = true
 vim.opt.guicursor = "n-v-c-i:block"
 
+-- File explorer
+vim.g.netrw_banner = 0
+--
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
