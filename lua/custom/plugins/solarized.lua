@@ -1,4 +1,4 @@
--- return {
+return {
 --     {
 --       "craftzdog/solarized-osaka.nvim",
 --       lazy = false,
@@ -10,4 +10,4 @@
 --       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 --     end,
 --     }
--- }
+}
